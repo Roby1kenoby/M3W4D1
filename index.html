@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-primary ">
+    <header>
+        <nav class="navbar navbar-expand h-25">
+            <div class="container-fluid">
+                <div class="d-flex ">
+                    <a class="navbar-brand" href="#">
+                        <img id="netflixLogo" class="img-fluid" src="assets/imgs/Netflix_Logo_RGB.png" alt="Netflix Logo">
+                    </a>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link link-light" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active link-light active " aria-current="page" href="#">TV Shows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" aria-current="page" href="#">Movies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" aria-current="page" href="#">Recently Added</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" aria-current="page" href="#">My List</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex ">
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link link-light" aria-current="page" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" aria-current="page" href="#">KIDS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" aria-current="page" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-bell" viewBox="0 0 16 16">
+                                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                    <div class="dropdown">
+                                        <a class="nav-link link-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="assets/imgs/profileIcon.png" alt="">
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-sm-start">
+                                            <li>
+                                                <div id="ddProfileImage" class="d-flex p-3">
+                                                    <a href="#" role="button" aria-expanded="false">
+                                                        <img class="profilePic" src="assets/imgs/profileIcon.png" alt="">
+                                                    </a>
+                                                    <div class="contactInfo">
+                                                        <p class="m-0">Annette Black</p>
+                                                        <p class="text-body-tertiary m-0">annette@geeksui.com</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li><hr class="dropdown-divider m-0"></li>
+                                            <div class="d-flex flex-column justify-content-evenly">
+                                                <li>
+                                                    <div role="button" class="ddOptions d-flex align-items-center px-3 py-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                                                        </svg>
+                                                        <p class="m-0">Profile</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div role="button" class="ddOptions d-flex align-items-center px-3 py-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                                                        </svg>
+                                                        <p class="m-0">Subscription</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div role="button" class="ddOptions d-flex align-items-center px-3 py-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                                                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                                                        </svg>
+                                                        <p class="m-0">Settings</p>
+                                                    </div>
+                                                </li>
+                                            </div>
+                                            <li><hr class="dropdown-divider m-0"></li>
+                                            <li>
+                                                <div role="button" class="ddOptions d-flex align-items-center px-3 py-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                                                        <path d="M7.5 1v7h1V1z"/>
+                                                        <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+                                                    </svg>
+                                                    <p class="m-0">Sign Out</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="subNav">
+            <div class="container-fluid d-flex justify-content-between ">
+                <div class="d-flex align-items-center ">
+                    <h1>TV Shows</h1>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle bg-black " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Genres
+                        </button>
+                        <ul class="dropdown-menu bg-black ">
+                            <li><a class="dropdown-item link-light " href="#">Action</a></li>
+                            <li><a class="dropdown-item link-light " href="#">Thriller</a></li>
+                            <li><a class="dropdown-item link-light " href="#">Boring</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="csIconContainer d-flex justify-content-center align-items-center ">
+                        <div class="contentStyle d-flex justify-content-center align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24" role="img" data-icon="ListStandard" aria-hidden="true" class="svg-icon svg-icon-rows"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 6H0V4H24V6ZM24 18V20H0V18H24ZM0 13H12V11H0V13Z" fill="currentColor"></path></svg>
+                        </div>
+                        <div class="contentStyle d-flex justify-content-center align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24" role="img" data-icon="GridFillStandard" aria-hidden="true" class="svg-icon svg-icon-grid"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 3C0.447715 3 0 3.44772 0 4V10C0 10.5523 0.447715 11 1 11H10C10.5523 11 11 10.5523 11 10V4C11 3.44772 10.5523 3 10 3H1ZM1 13C0.447715 13 0 13.4477 0 14V20C0 20.5523 0.447715 21 1 21H10C10.5523 21 11 20.5523 11 20V14C11 13.4477 10.5523 13 10 13H1ZM13 4C13 3.44772 13.4477 3 14 3H23C23.5523 3 24 3.44772 24 4V10C24 10.5523 23.5523 11 23 11H14C13.4477 11 13 10.5523 13 10V4ZM14 13C13.4477 13 13 13.4477 13 14V20C13 20.5523 13.4477 21 14 21H23C23.5523 21 24 20.5523 24 20V14C24 13.4477 23.5523 13 23 13H14Z" fill="currentColor"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h3>Trending Now</h3>
+            <div class="container-fluid">
+                <div id="trendingNowCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="cardContainer d-flex ">
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/1.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/2.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/3.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/4.png" alt="">
+                                </div>
+                                <div class="card w-25 ">
+                                    <img src="assets/imgs/movies/5.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="cardContainer d-flex ">
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/6.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/7.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/8.png" alt="">
+                                </div>
+                                <div class="card w-25 ">
+                                    <img src="assets/imgs/movies/9.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/10.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="cardContainer d-flex ">
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/11.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/12.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/13.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/14.png" alt="">
+                                </div>
+                                <div class="card w-25">
+                                    <img src="assets/imgs/movies/15.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#trendingNowCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#trendingNowCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section>Watch It Again</section>
+        <section>New Releases</section>
+    </main>
+
+    <footer>
+        <div class="socialIcons">Social Icons</div>
+        <div class="links">Links</div>
+        <button>Service Code</button>
+        <p>Copyright</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

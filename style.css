@@ -85,6 +85,12 @@ section{
     margin-left: 0.8em;
     margin-top: 1em;
     margin-bottom: 3em;
+    transition: transform 1s ease-in;
+}
+
+.invisible{
+    position: relative;
+    transform: translatex(100%);
 }
 
 section *{

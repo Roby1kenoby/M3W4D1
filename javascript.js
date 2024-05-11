@@ -10,7 +10,7 @@ document.addEventListener("scroll", (event) => {
     // per ogni sezione, sull'evento di scroll
     for (let s of sections){
         // verifico se la posizione del lato basso del rettangolo è oltre il bordo basso dello schermo
-        if(s.getBoundingClientRect().bottom >= window.innerHeight){
+        if(s.getBoundingClientRect().top >= window.innerHeight){
             // se si, allora quella sezione deve essere invisibile
             s.classList.add("invisible")
         }

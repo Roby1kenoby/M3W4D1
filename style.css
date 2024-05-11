@@ -85,7 +85,7 @@ section{
     margin-left: 0.8em;
     margin-top: 1em;
     margin-bottom: 3em;
-    transition: transform 1s ease-in;
+    transition: transform 1s ease-in 0.2s;
 }
 
 .invisible{

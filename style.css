@@ -13,6 +13,12 @@ body, header *{
 
 body, header{
     color: white;
+    max-width: 100%;
+}
+
+body{
+    overflow-x: hidden;
+
 }
 
 #netflixLogo{
@@ -49,6 +55,38 @@ body, header{
     margin: 0.5em 0;
 }
 
+.cardContainer{
+    white-space: nowrap;
+}
+@media (max-width: 680px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 47%;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 29%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: 23%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .card {
+        width: 19%;
+    }
+}
 
 .card{
     border: none;
@@ -58,6 +96,8 @@ body, header{
 	cursor: pointer;
     z-index: 1;
     transition: scale 0.3s ease-in;
+    display: inline-block;
+    
 }
 
 .card:hover {
@@ -65,7 +105,15 @@ body, header{
     z-index: 10;
 }
 
-.carousel-control-next{
+.card img{
+    width: 100%;
+}
+
+.buttonContainer{
+    height: 100%
+}
+
+/* .carousel-control-next{
     width: 5%;
 }
 
@@ -79,7 +127,7 @@ body, header{
 
 .carousel-control-prev-icon {
     display: none;
-}
+} */
 
 section{
     margin-left: 0.8em;

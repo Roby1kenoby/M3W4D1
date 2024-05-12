@@ -110,30 +110,35 @@ body{
 }
 
 .buttonContainer{
-    height: 100%
+    height: 80%;
+    width: 100%;
+    position: absolute;
 }
 
-/* .carousel-control-next{
-    width: 5%;
+.buttonContainer button{
+    position: absolute;
+    z-index: 100;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    color: transparent;
 }
 
-.carousel-control-prev{
-    width: 5%;
+.buttonContainer .nextSet{
+    right: 0;
 }
 
-.carousel-control-next-icon {
-    display: none;
+.buttonContainer .prevSet{
+    left: 0;
 }
-
-.carousel-control-prev-icon {
-    display: none;
-} */
 
 section{
     margin-left: 0.8em;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 3em;
-    transition: transform 1s ease-in;
+    transition: transform 1s ease-in 0.3s;
+    position: relative;
 }
 
 .invisible{

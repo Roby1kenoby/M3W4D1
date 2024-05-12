@@ -19,7 +19,7 @@ document.addEventListener("scroll", (event) => {
     // per ogni sezione, sull'evento di scroll
     for (let s of sections){
         // verifico se la posizione del lato basso del rettangolo è oltre il bordo basso dello schermo
-        if(s.getBoundingClientRect().bottom >= window.innerHeight){
+        if(s.getBoundingClientRect().top >= window.innerHeight){
             // se si, allora quella sezione deve essere invisibile
             s.classList.add("invisible")
         }
@@ -65,7 +65,6 @@ let next = function(id){
 
     // se ho ancora click disponibili, faccio la transizione.
     if (sectionClicks < maxClick){
-        console.log(`Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
         // applico la traslazione (nr di carte * larghezza di una singola carta * il numero di click già fatti)
         // c'è un problema con la traslazione sull'asse x, credo che derivi dalle approssimazioni
         section.style.transform = `translatex(${(-cardWidth * nrCards * sectionClicks)}px)`
@@ -73,7 +72,6 @@ let next = function(id){
     }
     else{
         // resetto il contatore della sezione e torno a 0 come posizione
-        console.log(`Resetto, Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
         sectionsCounters[`${id}`] = 0
         section.style.transform = `translatex(0px)`
         section.style.transition = 'transform .8s ease-in-out'
@@ -105,7 +103,8 @@ let prev = function(id){
     // calcolo il numero massimo di click prima di arrivare al fondo della lista
     let maxClick = arrayCardsLength / nrCards
 
-    // controllo quanti click sono già stati fatti su questa sezione (se non c'è, la aggiungo e so che sono all'inizio. Se c'è, faccio -1)
+    // controllo quanti click sono già stati fatti su questa sezione (se non c'è, la aggiungo e so che sono all'inizio. 
+    // Se c'è, faccio -1)
     let sectionClicks = sectionsCounters.hasOwnProperty(id) ? sectionsCounters[`${id}`] -= 1 : sectionsCounters[`${id}`] = -1
     
     // individuo la grandezza di una card
@@ -115,23 +114,18 @@ let prev = function(id){
     if (sectionClicks < 0){
         sectionsCounters[`${id}`] = maxClick -1
         sectionClicks = sectionsCounters[`${id}`]
-        console.log(`Resetto indietro, Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
         section.style.transform = `translatex(${(-cardWidth * nrCards * sectionClicks)}px)`
         section.style.transition = 'transform .8s ease-in-out'
     } 
-    // se siamo a 0, resetto la situazione
+    // se siamo arrivati a 0, resetto la situazione (partendo dall'inizio)
     else if (sectionClicks == 0){
         // torniamo a 0
-        console.log(`sc == 0, Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
         section.style.transform = `translatex(0px)`
         section.style.transition = 'transform .8s ease-in-out'
     }
     else{
         // vado indietro di una sezione
-        console.log(`-1 teorico, Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
-        console.log(cardWidth, nrCards)
         let x = section.getBoundingClientRect().x
-        console.log(x)
         section.style.transform = `translatex(${x - (-cardWidth * nrCards)}px)`
         section.style.transition = 'transform .8s ease-in-out'
     }

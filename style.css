@@ -14,10 +14,12 @@ body, header *{
 
 body, header{
     color: white;
+    max-width: 100%;
 }
 
 body{
-    overflow-x: hidden
+    overflow-x: hidden;
+
 }
 
 #netflixLogo{
@@ -54,6 +56,38 @@ body{
     margin: 0.5em 0;
 }
 
+.cardContainer{
+    white-space: nowrap;
+}
+@media (max-width: 680px) {
+    .card {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 47% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 29% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: 23% !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .card {
+        width: 16% !important;
+    }
+}
 
 .card{
     border: none;
@@ -63,6 +97,8 @@ body{
 	cursor: pointer;
     z-index: 1;
     transition: scale 0.3s ease-in;
+    display: inline-block;
+    
 }
 
 .card:hover {
@@ -70,29 +106,40 @@ body{
     z-index: 10;
 }
 
-.carousel-control-next{
-    width: 5%;
+.card img{
+    width: 100%;
+}
+
+.buttonContainer{
+    height: 80%;
+    width: 100%;
+    position: absolute;
+}
+
+.buttonContainer button{
+    position: absolute;
     z-index: 100;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    color: transparent;
 }
 
-.carousel-control-prev{
-    width: 5%;
-    z-index: 100;
+.buttonContainer .nextSet{
+    right: 0;
 }
 
-.carousel-control-next-icon {
-    display: none;
-}
-
-.carousel-control-prev-icon {
-    display: none;
+.buttonContainer .prevSet{
+    left: 0;
 }
 
 section{
     margin-left: 0.8em;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 3em;
-    transition: transform 1s ease-in 0.2s;
+    transition: transform 1s ease-in 0.3s;
+    position: relative;
 }
 
 .invisible{

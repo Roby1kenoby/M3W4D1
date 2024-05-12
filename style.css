@@ -138,7 +138,7 @@ section{
     margin-left: 0.8em;
     margin-top: 2em;
     margin-bottom: 3em;
-    transition: transform 1s ease-in 0.3s;
+    transition: transform 1s ease-in 0.1s;
     position: relative;
 }
 

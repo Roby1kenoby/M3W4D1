@@ -107,16 +107,20 @@ let prev = function(id){
 
     // controllo quanti click sono già stati fatti su questa sezione (se non c'è, la aggiungo e so che sono all'inizio. Se c'è, faccio -1)
     let sectionClicks = sectionsCounters.hasOwnProperty(id) ? sectionsCounters[`${id}`] -= 1 : sectionsCounters[`${id}`] = -1
+    
     // individuo la grandezza di una card
     let cardWidth = document.getElementsByClassName('card')[0].getBoundingClientRect().width
-    // se ho ancora click disponibili per tornare indietro (non sono ancora a 0), faccio la transizione.
+    
+    // se vado in negativo vuol dire che ero all'inizio, quindi riparto dal fondo
     if (sectionClicks < 0){
         sectionsCounters[`${id}`] = maxClick -1
         sectionClicks = sectionsCounters[`${id}`]
         console.log(`Resetto indietro, Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
         section.style.transform = `translatex(${(-cardWidth * nrCards * sectionClicks)}px)`
         section.style.transition = 'transform .8s ease-in-out'
-    } else if (sectionClicks == 0){
+    } 
+    // se siamo a 0, resetto la situazione
+    else if (sectionClicks == 0){
         // torniamo a 0
         console.log(`sc == 0, Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
         section.style.transform = `translatex(0px)`
@@ -126,7 +130,9 @@ let prev = function(id){
         // vado indietro di una sezione
         console.log(`-1 teorico, Section Click: ${sectionClicks}, Max Click: ${maxClick}`)
         console.log(cardWidth, nrCards)
-        section.style.transform = `translatex(-${(cardWidth * nrCards)}px)`
+        let x = section.getBoundingClientRect().x
+        console.log(x)
+        section.style.transform = `translatex(${x - (-cardWidth * nrCards)}px)`
         section.style.transition = 'transform .8s ease-in-out'
     }
 }
